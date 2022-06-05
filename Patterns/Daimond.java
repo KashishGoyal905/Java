@@ -23,6 +23,7 @@ public class Daimond {
         // System.out.println(k);
 
         int val = 1;
+        int vale = 4;
         for (int i = k; i < n; i++) {
             for (int j = 0; j < val; j++) {
                 System.out.print("->");
@@ -31,8 +32,9 @@ public class Daimond {
             for (int j = val - 1; j < k; j++) {
                 System.out.print("*" + " ");
             }
-            for (int j = k; j < k ; j++) {
+            for (int j = k; j < vale; j++) {
                 System.out.print("*" + " ");
+                vale--;
             }
             System.out.println(" ");
         }
