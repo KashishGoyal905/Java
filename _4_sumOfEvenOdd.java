@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class sumOfEvenOdd {
+public class _4_sumOfEvenOdd {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
