@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class TotalSalary {
+public class _3_TotalSalary {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int basic = scanner.nextInt();

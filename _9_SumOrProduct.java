@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SumOrProduct {
+public class _9_SumOrProduct {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
