@@ -1,19 +1,19 @@
-package Patterns;
+package _1_Patterns;
 
 import java.util.Scanner;
 
-public class CharPattern2 {
+public class Pattern4 {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         for (int i = 0; i < n; i++) {
-            char c = (char) ('A' + n - i);
+            int k = i+1;
             for (int j = 0; j <= i; j++) {
-                System.out.print((char) (c));
-                c = (char) (c + 1);
+                System.out.print(k + " ");
+                k++;
             }
             System.out.println(" ");
+
         }
     }
-
 }

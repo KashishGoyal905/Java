@@ -1,22 +1,22 @@
-package Patterns;
+package _1_Patterns;
 
 import java.util.Scanner;
 
-public class Pattern5 {
+public class Star {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         for (int i = 0; i < n; i++) {
-        int k = i+1;
-            for (int j = 1; j < n - i; j++) {
+            for (int j = 0; j < n - i - 1; j++) {
                 System.out.print("->");
             }
-            for (int j = n - i; j <= n; j++) {
-                System.out.print(k + " ");
-                k++;
+            for (int j = n - i - 1; j < n; j++) {
+                System.out.print("*" + " ");
+            }
+            for (int j = n; j < n + i; j++) {
+                System.out.print("*" + " ");
             }
             System.out.println(" ");
-
         }
     }
 }
