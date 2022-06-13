@@ -1,0 +1,3 @@
+-> its a non primitive data type so it stores refrrences.
+-> its immutable means we can not change the string value.
+-> it works on the mechanism of the string pool.(sp if two string have same value both ref to same reference)
