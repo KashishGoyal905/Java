@@ -1,0 +1,9 @@
+1. how 2d array are stored:
+        it is a storage of reference of multiple 1d array.
+
+2. Jagged Arrays:
+        means each row can have diff column size 
+        we can acheive this by first creating 2d array and assigning only row size to it
+        and creating new 1d array if different size on each row of 2d array.
+        we can do this because 2d array is a storage of reference in the master array.
+
