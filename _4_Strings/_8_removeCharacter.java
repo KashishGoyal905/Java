@@ -9,23 +9,22 @@ public class _8_removeCharacter {
         String x = s.nextLine();
         int count = 0;
         for (int j = 0; j < str1.length(); j++) {
-            if (str1.charAt(0) == 'a') {
+            if (str1.charAt(j) == x.charAt(0)) {
                 count++;
             }
         }
         int i = 0;
-        while (count > 0) {
-            if (i < 0) {
-                i = 0;
-            }
-            if (str1.charAt(i) == 'a') {
+        int z = str1.length();
+        while (count > 0 && z >= 0) {
+            if (str1.charAt(i) == x.charAt(0)) {
                 str1 = str1.substring(0, i) + str1.substring(i + 1);
-                i--;
+                z--;
                 count--;
-                System.out.println(str1 + " " + i);
             } else {
                 i++;
+                z--;
             }
         }
+        System.out.println(str1);
     }
 }
