@@ -31,7 +31,7 @@ public class _5_pascalsTraingle {
     }
 
     public static void main(String[] args) {
-        generate(5);
+        generate(9);
     }
 }
 
