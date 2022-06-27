@@ -8,6 +8,7 @@ public class _6_Bitwise {
         System.out.println(34 << 1);
         System.out.println(34 >> 1);
         System.out.println(~4 << 1);
+        
 
     }
 }
