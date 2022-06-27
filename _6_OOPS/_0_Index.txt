@@ -1,0 +1,10 @@
+oops-> object oriented programming.
+class-> template/blueprints.
+
+-->if in the same folder we don't need to import the template,else if in different folder
+     we need to import the folder(name) in the file we want to work in with.
+
+-->if in the different folder and we want to use the property of template then we have to make it public
+    private->only within the same class.
+    default->only within the same package.
+    public->anywhere after immpoting.
