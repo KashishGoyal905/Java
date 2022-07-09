@@ -7,13 +7,13 @@ public class _2_isFibonacci {
         int first = 1;
         int second = 1;
         int c = 0;
-        for (int i = 0; i < n; i++) {
+        for (int i = 2; i <= n; i++) {
             c = first + second;
-            first = second;
-            second = c;
             if (c == n) {
                 return true;
             }
+            first = second;
+            second = c;
         }
         return false;
     }

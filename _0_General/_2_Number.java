@@ -9,7 +9,7 @@ public class _2_Number {
         int j = 20;
         int sum = i + j;
         short s = 1; // 2 byte
-        long l = 12345; // 8 byte
+        long l = 123411111115l; // 8 byte
         float f = 1.0f; // 4 byte
         double d = 1.0; // 8 byte
         char c = 'a'; // 2 bytes

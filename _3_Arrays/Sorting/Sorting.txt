@@ -2,7 +2,7 @@ Selection sort -> in this sorting we find the smallest one and swap it with the 
 
 Bubble Sort -> in this sorting we compare the adjacent and put the largest in the last one.
 
-Insertion Sort -> in this sorting we make two parts one sorted one unsorted compare one ele 
+Insertion Sort -> in this sorting we make two parts one sorted one unsorted compare one else 
                    of unsorted ot sorted and put it in the right direction.(its like a card 
                     we take one by one and put it in the right direction).
 
