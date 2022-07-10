@@ -10,7 +10,7 @@ public class _5_absentDigits {
         while (input > 0) {
             long last = input % 10;
             ans[(int) last]++;
-            input = input/10;
+            input = input / 10;
         }
         for (int i = 0; i < ans.length; i++) {
             if (ans[i] == 0) {

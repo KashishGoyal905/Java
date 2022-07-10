@@ -9,12 +9,12 @@ public class _7_characterArray {
         int ascii = (int) c;
         int size = ascii - 64;
         char arr[] = new char[size];
-        for (int i = 0; i <size; i++) {
-            arr[i] = (char) ('A' + (char)i);
+        for (int i = 0; i < size; i++) {
+            arr[i] = (char) ('A' + (char) i);
         }
-       for(int i = 0; i < size; i++) {
-        System.out.print(arr[i]+ " ");
-       }
-        
+        for (int i = 0; i < size; i++) {
+            System.out.print(arr[i] + " ");
+        }
+
     }
 }

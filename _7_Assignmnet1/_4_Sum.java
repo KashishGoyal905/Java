@@ -9,7 +9,6 @@ public class _4_Sum {
         int k = d;
         int sum = 0;
         for (int i = 0; i < n; i++) {
-            // System.out.print(d + " ");
             sum += d;
             d = (d * 10) + k;
 

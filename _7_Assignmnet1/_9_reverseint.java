@@ -6,7 +6,6 @@ public class _9_reverseint {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int input = scanner.nextInt();
-        int ans = 0;
         while (input > 0) {
             int last = input % 10;
             System.out.print(last);
