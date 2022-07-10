@@ -10,12 +10,12 @@ public class _1_Palindrome {
         int reverse = 0;
         while (input > 0) {
             int last = input % 10;
-            reverse = reverse*10+ last;
+            reverse = reverse * 10 + last;
             input = input / 10;
         }
-        if(reverse == checker) {
+        if (reverse == checker) {
             System.out.println("Yes");
-        }else{
+        } else {
             System.out.println("No");
         }
     }

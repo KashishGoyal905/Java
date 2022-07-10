@@ -4,7 +4,7 @@ public class _10_ConcatArray {
     public static void main(String[] args) {
         String arr1[] = { "Hello", "World" };
         String arr2[] = { "Hi", "There" };
-        String arr3[] = new String[arr1.length + arr2.length];
+        String arr3[] = new String[arr1.length * arr2.length];
         int k = 0;
         for (int i = 0; i < arr1.length; i++) {
             for (int j = 0; j < arr2.length; j++) {
