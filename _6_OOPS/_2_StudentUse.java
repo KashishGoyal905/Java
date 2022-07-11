@@ -7,6 +7,9 @@ public class _2_StudentUse {
 
         _1_student s1 = new _1_student("kii", 100);
         s1.print();
+        // as numstudents is private
+        // System.out.println(_1_student.numStudents);
+        _1_student.getNumStudents();
         // s1.name = "kii";
         // s1.rollNumber = 100;
     }
