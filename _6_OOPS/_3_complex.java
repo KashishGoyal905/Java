@@ -39,16 +39,22 @@ public class _3_complex {
     }
 
     public void multiply(_3_complex c2) {
-        this.real = c2.real * this.real;
-        this.imaginary = c2.imaginary * this.imaginary;
+        this.real = (c2.real * this.real) - (this.imaginary * c2.imaginary);
+        this.imaginary =(this.real * c2.imaginary) + (this.imaginary * c2.real);
     }
 
-    // public _3_complex conjugate() {
-    //     if (imaginary > 0) {
+    //  
 
-    //     }else{
+    public static _3_complex add(_3_complex c2, _3_complex c3) {
+        int newReal = c2.real + c3.real;
+        int newimaginary = c2.imaginary + c3.imaginary;
+        _3_complex c = new _3_complex(newReal, newimaginary);
+        return c;
+    }
 
-    //     }
+    // public _3_complex conjugate(){
+
     // }
 
 }
+// strings strings function user derined function
