@@ -10,14 +10,23 @@ public class _3_complexUse {
         c1.print();
 
         _3_complex c2 = new _3_complex(1, 5);
-        c1.add(c2);
         c2.print();
+        c1.add(c2);
         c1.print();
 
-        _3_complex c3 = new _3_complex(3,2);
         c1.multiply(c2);
-        c2.print();
         c1.print();
+        
+        _3_complex c3 = _3_complex.add(c1,c2);
+        c1.print();
+        c2.print();
+        c3.print();
+
+
+        // _3_complex c4 = c1.conjugate();
+        // c4.print();
+
+        
 
     }
 
