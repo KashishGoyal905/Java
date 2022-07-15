@@ -43,8 +43,6 @@ public class _3_complex {
         this.imaginary =(this.real * c2.imaginary) + (this.imaginary * c2.real);
     }
 
-    //  
-
     public static _3_complex add(_3_complex c2, _3_complex c3) {
         int newReal = c2.real + c3.real;
         int newimaginary = c2.imaginary + c3.imaginary;
@@ -57,4 +55,4 @@ public class _3_complex {
     // }
 
 }
-// strings strings function user derined function
+// strings strings function user defined function
