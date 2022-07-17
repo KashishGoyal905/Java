@@ -10,7 +10,7 @@ public class Daimond {
         int k = z + 1;
         for (int i = 0; i < k; i++) {
             for (int j = 0; j < k - i - 1; j++) {
-                System.out.print("->");
+                System.out.print("  ");
             }
             for (int j = k - i - 1; j < k; j++) {
                 System.out.print("*" + " ");
@@ -26,7 +26,7 @@ public class Daimond {
         int vale = 4;
         for (int i = k; i < n; i++) {
             for (int j = 0; j < val; j++) {
-                System.out.print("->");
+                System.out.print("  ");
             }
             val++;
             for (int j = val - 1; j < k; j++) {

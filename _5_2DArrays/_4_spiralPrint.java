@@ -15,10 +15,37 @@ public class _4_spiralPrint {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int rows = scanner.nextInt();
-        int cols = scanner.nextInt();
-        int arr2D[][] = takeInput(rows, cols);
-        // todo later 
+        // Scanner scanner = new Scanner(System.in);
+        // int rows = scanner.nextInt();
+        // int cols = scanner.nextInt();
+        // int arr2D[][] = takeInput(rows, cols);
+        int arr2D[][] = { { 1, 2, 3, 4 },
+                { 5, 6, 7, 8 },
+                { 9, 10, 11, 12 },
+                { 13, 14, 15, 16 } };
+        // todo later
+        for (int i = 0; i < 1; i++) {
+            int rowlength = i;
+            int collength = i;
+            while (collength < 4) {
+                System.out.print(arr2D[rowlength][collength] + " ");
+                collength++; // 5
+            }
+            while (rowlength < 3) {
+                System.out.print(arr2D[rowlength + 1][collength - 1] + " ");
+                rowlength++;// 3
+            }
+            while (collength - 1 > 0) {
+                System.out.print(arr2D[rowlength][collength - 2] + " ");
+                collength--;//1
+            }
+            // System.out.println(collength);
+            while (rowlength-1> 0) {
+                System.out.print(arr2D[rowlength-1][collength - 1] + " ");
+                rowlength--;//1
+            }
+            // System.out.println(rowlength);
+        }
+
     }
 }
