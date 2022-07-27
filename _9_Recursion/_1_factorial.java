@@ -8,6 +8,7 @@ public class _1_factorial {
         if (n == 0) {
             return 1;
         }
+        System.out.println("");
         return n * factorial(n - 1);
     }
 
