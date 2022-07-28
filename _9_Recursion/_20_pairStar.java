@@ -2,7 +2,8 @@ package _9_Recursion;
 
 import java.util.Scanner;
 
-public class _17_replacePi {
+public class _20_pairStar {
+
     public static String replacePi(String m, int start, int n) {
         if (start >= n - 1) {
             if (start >= n) {
@@ -11,8 +12,8 @@ public class _17_replacePi {
                 return m.charAt(start) + "";
             }
         }
-        if (m.charAt(start) == 'p' && m.charAt(start + 1) == 'i') {
-            return "3.14" + replacePi(m, start + 2, n);
+        if (m.charAt(start) == m.charAt(start + 1)) {
+            return m.charAt(start) + "*" + replacePi(m, start + 1, n);
         } else {
             return m.charAt(start) + replacePi(m, start + 1, n);
         }
