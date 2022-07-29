@@ -12,7 +12,6 @@ public class _18_removeX {
         } else {
             return m.charAt(start) + removeX(m, start + 1, end);
         }
-
     }
 
     public static void main(String[] args) {
