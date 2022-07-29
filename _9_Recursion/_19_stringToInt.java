@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class _19_stringToInt {
     public static int stringToInt(String m, int start, int end) {
-        if (start > end - 1) {
+        if (start >= m.length()) {
             return 0;
         }
-        return Integer.parseInt(m.charAt(start) + "") + stringToInt(m, start + 1, end);
+        // System.out.print(m.charAt(end - 1));
+        return Character.getNumericValue(m.charAt(end - 1)) + stringToInt(m, start + 1, end - 1) * 10;
     }
-    // todo later
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
