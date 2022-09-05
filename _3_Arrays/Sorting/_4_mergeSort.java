@@ -40,7 +40,7 @@ public class _4_mergeSort {
                 third++;
                 j++;
             }
-        }
+        }   
         while (i < size1) {
             ans[third] = arr1[i];
             i++;

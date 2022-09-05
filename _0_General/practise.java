@@ -2,7 +2,7 @@ package _0_General;
 
 import java.util.Scanner;
 
-public class _8_PrimeRange {
+public class practise {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         boolean flag = false;

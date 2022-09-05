@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class _21_TOH {
     public static void TowerOfHanoi(int m, int a, int b, int c) {
-        if (m ==0 ) {
+        if (m == 0) {
             // System.out.println("Move " + a + " to " + b + " using " + c);
             return;
         }

@@ -3,7 +3,6 @@ package _9_Recursion;
 import java.util.Scanner;
 
 public class _1_factorial {
-
     public static int factorial(int n) {
         if (n == 0) {
             return 1;
