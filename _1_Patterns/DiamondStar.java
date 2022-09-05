@@ -9,8 +9,8 @@ public class DiamondStar {
         int n1;
         int n2;
         if (size % 2 == 0) {
-            n2 = size / 2;
             n1 = size / 2;
+            n2 = size - n1;
         } else {
             n1 = (size / 2) + 1;
             n2 = size - n1;
@@ -29,13 +29,21 @@ public class DiamondStar {
             System.out.println();
         }
         for (int i = 0; i < n2; i++) {
-            for (int j = 0; j < i + 1; j++) {
-                System.out.print("  ");
+            if (n1 == n2) {
+                int j = 0;
+                for (; j < i; j++) {
+                    System.out.print("  ");
+                }
+            } else {
+                int j = 0;
+                for (; j < i + 1; j++) {
+                    System.out.print("  ");
+                }
             }
             for (int j = 0; j < n2 - i; j++) {
                 System.out.print("*" + " ");
             }
-            for (int j = 0; j <n2-i-1; j++) {
+            for (int j = 0; j < n2 - i - 1; j++) {
                 System.out.print("*" + " ");
             }
             System.out.println();

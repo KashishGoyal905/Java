@@ -3,7 +3,7 @@ package _3_Arrays.General;
 import java.util.Scanner;
 
 public class _13_sortZeroOne {
-    public static int[] takeInput() {
+    public static int[] takeInput() {   
         Scanner scanner = new Scanner(System.in);
         int size = scanner.nextInt();
         int array[] = new int[size];

@@ -5,7 +5,7 @@ public class _7_NthFibonacci {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        int first = 1;
+        int first = 0;
         int second = 1;
         int output = 0;
         for (int i = 0; i < n-2; i++) {
