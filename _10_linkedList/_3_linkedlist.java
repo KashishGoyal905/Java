@@ -36,23 +36,45 @@ public class _3_linkedlist {
         int index = scanner.nextInt();
         int data = scanner.nextInt();
         int i = 0;
-        _3_node<Integer> temp = null;
         _3_node<Integer> temp2 = head;
-        while(i!=index-1) {
-            head = head.next;
+        _3_node<Integer> newNode = new _3_node<Integer>(data);
+        if(index==0){
+            newNode.next = temp2;
+            return newNode;
+        }
+
+        while (i < index - 1) {
+            temp2 = temp2.next;
             i++;
         }
-        temp = head.next;
-        _3_node<Integer> newNode = new _3_node<Integer>(data);
-        head.next = newNode;
-        newNode.next = temp;
-        return temp2;
+        newNode.next = temp2.next;
+        temp2.next = newNode;
+        return head;
+    }
+
+    public static _3_node<Integer> delete(_3_node<Integer> head) {
+        Scanner scanner = new Scanner(System.in);
+        int index = scanner.nextInt();
+        int i = 0;
+        _3_node<Integer> temp2 = head;
+        if(index==0){
+            head = head.next;
+            return head;
+        }
+        while (i < index - 1) {
+            temp2 = temp2.next;
+            i++;
+        }
+        temp2.next = temp2.next.next;
+        return head;
     }
 
     public static void main(String[] args) {
         _3_node<Integer> head = takeInput();
         print(head);
-        _3_node<Integer> newHead = insert(head);
-        print(newHead);
+        head = insert(head);
+        print(head);
+        head = delete(head);
+        print(head);
     }
 }
