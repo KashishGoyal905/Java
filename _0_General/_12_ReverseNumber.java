@@ -10,12 +10,14 @@ public class _12_ReverseNumber {
         }
         while (n % 10 == 0) {
             n = n / 10;
-        }
+        }long rev = 0;
         while (n > 0) {
             int last = n % 10;
-            System.out.print(last);
+            // System.out.print(last);
+            rev = rev*10 + last;
             n = n / 10;
         }
+        System.out.println(rev);
 
     }
 }
