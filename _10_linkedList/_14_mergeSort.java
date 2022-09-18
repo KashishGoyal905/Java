@@ -38,14 +38,57 @@ public class _14_mergeSort {
         System.out.println("null");
     }
 
+    public static _14_mergeSort middlepoint(_14_mergeSort head) {
+        if(head == null){
+            return head;
+        }
+        _14_mergeSort slow = head;
+        _14_mergeSort fast = head;
+        while (fast != null && fast.next.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
+
+    public static _14_mergeSort sort(_14_mergeSort head1, _14_mergeSort head2) {
+        _14_mergeSort result = null;
+        if (head1 == null) {
+            return head2;
+        }
+        if (head2 == null) {
+            return head1;
+        }
+        if (head1.data <= head2.data) {
+            result = head1;
+            result.next = sort(head1.next, head2);
+        } else {
+            result = head2;
+            result.next = sort(head1, head2.next);
+        }
+        return result;
+
+    }
+
     public static _14_mergeSort mergeSort(_14_mergeSort head) {
-        
-        return head;
+        if (head == null || head.next == null) {
+            return head;
+        }
+        _14_mergeSort middle = middlepoint(head);
+        _14_mergeSort tail = middle.next;
+        middle.next = null;
+
+        _14_mergeSort left = mergeSort(head);
+        _14_mergeSort right = mergeSort(tail);
+        _14_mergeSort sorted = sort(left, right);
+
+        return sorted;
     }
 
     public static void main(String[] args) {
-        _14_mergeSort head= takeInput();
+        _14_mergeSort head = takeInput();
         print(head);
         head = mergeSort(head);
         print(head);
+    }
 }
