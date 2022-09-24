@@ -26,7 +26,7 @@ public class _2_stackUsingLL {
     }
 
     int pop() {
-        if(head == null){
+        if (head == null) {
             System.out.print("Stack Empty exception");
             return -1;
         }
@@ -48,7 +48,7 @@ public class _2_stackUsingLL {
     }
 
     int top() {
-        if(head == null){
+        if (head == null) {
             System.out.print("Stack Empty exception");
             return -1;
         }
@@ -64,7 +64,7 @@ public class _2_stackUsingLL {
         stack.push(5);
         System.out.println(stack.pop());
         System.out.println(stack.pop());
-        System.out.println("top: " + stack  .top());
+        System.out.println("top: " + stack.top());
         System.out.println("size: " + stack.size());
         System.out.println(stack.isEmpty());
     }
