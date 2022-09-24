@@ -31,10 +31,10 @@ public class _1_stackUsingArray {
         return data[top];
     }
 
-    private void doubleCapacity(){
+    private void doubleCapacity() {
         int temp[] = data;
-        data = new int[2*temp.length];
-        for (int i = 0; i <=top; i++){
+        data = new int[2 * temp.length];
+        for (int i = 0; i <= top; i++) {
             data[i] = temp[i];
         }
     }
@@ -46,6 +46,7 @@ public class _1_stackUsingArray {
         top++;
         data[top] = element;
     }
+
     public int pop() {
         if (size() == 0) {
             // stackemptyexception
@@ -56,7 +57,7 @@ public class _1_stackUsingArray {
         return temp;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         _1_stackUsingArray stack = new _1_stackUsingArray();
         stack.push(1);
         stack.push(2);
@@ -64,7 +65,7 @@ public class _1_stackUsingArray {
         stack.push(4);
         stack.push(5);
 
-        while(!stack.isEmpty()) {
+        while (!stack.isEmpty()) {
             System.out.print(stack.pop() + " ");
         }
     }
