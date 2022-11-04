@@ -9,7 +9,7 @@ public class _1_ArrayList {
         list.add(20);
         list.add(30);
         list.add(40);
-        list.add(2,50); // it will add ro at index 2 shift all by 1 to the right
+        list.add(2, 50); // it will add ro at index 2 shift all by 1 to the right
         System.out.println(list.size());
         System.out.println(list.get(1));
         list.remove(1);

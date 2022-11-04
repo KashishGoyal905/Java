@@ -58,12 +58,10 @@ public class _4_deleteNode {
         }
         temp.next = temp.next.next;
         return head;
-
     }
 
     public static void main(String[] args) {
         int length = 0;
         takeInput(length);
-
     }
 }
