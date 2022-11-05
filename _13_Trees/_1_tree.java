@@ -80,6 +80,38 @@ public class _1_tree {
         }
     }
 
+    // find out the number of the nodes in a tree
+    public static int getNumberOfNodes(_1_tree root) {
+        if (root == null) {
+            return 0;
+        }
+        int count = 1;
+        for (int i = 0; i < root.list.size(); i++) {
+            count += getNumberOfNodes(root.list.get(i));
+        }
+        return count;
+    }
+
+    // Node with the largest data
+    public static int largestData(_1_tree root) {
+        int largest = Integer.MIN_VALUE;
+        Queue<_1_tree> q = new LinkedList<_1_tree>();
+        q.add(root);
+        if (root.data > largest) {
+            largest = root.data;
+        }
+        while (!q.isEmpty()) {
+            _1_tree grab = q.remove();
+            for (int i = 0; i < grab.list.size(); i++) {
+                q.add(grab.list.get(i));
+                if (grab.list.get(i).data > largest) {
+                    largest = grab.list.get(i).data;
+                }
+            }
+        }
+        return largest;
+    }
+
     public static void main(String[] args) {
         // _1_tree root = new _1_tree(4);
         // _1_tree node1 = new _1_tree(2);
@@ -97,6 +129,12 @@ public class _1_tree {
         _1_tree root = takeInputI();
         // print(root);
         printLevelWise(root);
+
+        int numofnodes = getNumberOfNodes(root);
+        System.out.println("Number of nodes are: " + numofnodes);
+
+        int largest = largestData(root);
+        System.out.println("largest node data is: " + largest);
     }
 
 }
