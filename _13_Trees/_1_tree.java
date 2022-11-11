@@ -112,6 +112,35 @@ public class _1_tree {
         return largest;
     }
 
+    public static int largestDataR(_1_tree root) {
+        // int largest = Integer.MIN_VALUE;
+
+        int ans = root.data;
+        for (int i = 0; i < root.list.size(); i++) {
+            int child = largestDataR(root.list.get(i));
+            if (child > ans) {
+                ans = child;
+            }
+        }
+        return ans;
+    }
+
+    // height of the tree
+    public static int getHeight(tree root) {
+        int count2 = 0;
+        if (root == null) {
+            return 0;
+        }
+        int count = 0;
+        for (int i = 0; i < root.list.size(); i++) {
+            count = count + 1 + getHeight(root.list.get(i));
+            if (count > count2) {
+                count2 = count;
+            }
+        }
+        return count2;
+    }
+
     public static void main(String[] args) {
         // _1_tree root = new _1_tree(4);
         // _1_tree node1 = new _1_tree(2);
@@ -135,6 +164,9 @@ public class _1_tree {
 
         int largest = largestData(root);
         System.out.println("largest node data is: " + largest);
+
+        int largest2 = largestDataR(root);
+        System.out.println("largest2 node data is: " + largest2);
     }
 
 }
