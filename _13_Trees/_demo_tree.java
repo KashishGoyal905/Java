@@ -5,47 +5,47 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class _1_tree {
+public class _demo_tree {
     int data;
-    ArrayList<_1_tree> list;
+    ArrayList<_demo_tree> list;
 
-    _1_tree(int data) {
+    _demo_tree(int data) {
         this.data = data;
-        list = new ArrayList<_1_tree>();
+        list = new ArrayList<_demo_tree>();
     }
 
     // taking input recursively
-    public static _1_tree takeInputR() {
+    public static _demo_tree takeInputR() {
         Scanner s = new Scanner(System.in);
         int data = 0;
         System.out.println("Enter the " + data + " node data: ");
         data = s.nextInt();
-        _1_tree root = new _1_tree(data);
+        _demo_tree root = new _demo_tree(data);
         System.out.println("Enter the number of children of " + root.data + ": ");
         int children = s.nextInt();
         for (int i = 0; i < children; i++) {
-            _1_tree child = takeInputR();
+            _demo_tree child = takeInputR();
             root.list.add(child);
         }
         return root;
     }
 
     // taking input iteratively
-    public static _1_tree takeInputI() {
+    public static _demo_tree takeInputI() {
         Scanner s = new Scanner(System.in);
         System.out.println("Enter the root data: ");
         int data = s.nextInt();
-        _1_tree root = new _1_tree(data);
-        Queue<_1_tree> q = new LinkedList<_1_tree>();
+        _demo_tree root = new _demo_tree(data);
+        Queue<_demo_tree> q = new LinkedList<_demo_tree>();
         q.add(root);
         while (!q.isEmpty()) {
-            _1_tree FrontNode = q.remove();
+            _demo_tree FrontNode = q.remove();
             System.out.println("Enter the number of children of " + FrontNode.data + ": ");
             int children = s.nextInt();
             for (int i = 0; i < children; i++) {
                 System.out.println("Enter the " + (i + 1) + " th child of " + root.data + ": ");
                 data = s.nextInt();
-                _1_tree child = new _1_tree(data);
+                _demo_tree child = new _demo_tree(data);
                 q.add(child);
                 FrontNode.list.add(child);
             }
@@ -54,7 +54,7 @@ public class _1_tree {
     }
 
     // printing recursively
-    public static void print(_1_tree root) {
+    public static void print(_demo_tree root) {
         String s = root.data + ": ";
         for (int i = 0; i < root.list.size(); i++) {
             s = s + root.list.get(i).data + ", ";
@@ -66,11 +66,11 @@ public class _1_tree {
     }
 
     // printing iteratively
-    public static void printLevelWise(_1_tree root) {
-        Queue<_1_tree> queue = new LinkedList<_1_tree>();
+    public static void printLevelWise(_demo_tree root) {
+        Queue<_demo_tree> queue = new LinkedList<_demo_tree>();
         queue.add(root);
         while (!queue.isEmpty()) {
-            _1_tree frontNode = queue.remove();
+            _demo_tree frontNode = queue.remove();
             System.out.print(frontNode.data + ": ");
             for (int i = 0; i < frontNode.list.size(); i++) {
                 queue.add(frontNode.list.get(i));
@@ -81,7 +81,7 @@ public class _1_tree {
     }
 
     // find out the number of the nodes in a tree
-    public static int getNumberOfNodes(_1_tree root) {
+    public static int getNumberOfNodes(_demo_tree root) {
         if (root == null) {
             return 0;
         }
@@ -93,15 +93,15 @@ public class _1_tree {
     }
 
     // Node with the largest data
-    public static int largestData(_1_tree root) {
+    public static int largestData(_demo_tree root) {
         int largest = Integer.MIN_VALUE;
-        Queue<_1_tree> q = new LinkedList<_1_tree>();
+        Queue<_demo_tree> q = new LinkedList<_demo_tree>();
         q.add(root);
         if (root.data > largest) {
             largest = root.data;
         }
         while (!q.isEmpty()) {
-            _1_tree grab = q.remove();
+            _demo_tree grab = q.remove();
             for (int i = 0; i < grab.list.size(); i++) {
                 q.add(grab.list.get(i));
                 if (grab.list.get(i).data > largest) {
@@ -112,7 +112,7 @@ public class _1_tree {
         return largest;
     }
 
-    public static int largestDataR(_1_tree root) {
+    public static int largestDataR(_demo_tree root) {
         // int largest = Integer.MIN_VALUE;
 
         int ans = root.data;
@@ -155,8 +155,8 @@ public class _1_tree {
 
         // input form user
         // _1_tree root = takeInputR();
-        _1_tree root = takeInputI();
-        // print(root);
+        _demo_tree root = takeInputI();
+        // print(root); 
         printLevelWise(root);
 
         int numofnodes = getNumberOfNodes(root);
