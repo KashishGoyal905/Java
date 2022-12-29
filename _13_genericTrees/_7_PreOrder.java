@@ -1,35 +1,35 @@
-package _13_Trees;
+package _13_genericTrees;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class _2_NumberOfNodes {
+public class _7_PreOrder {
     int data;
-    ArrayList<_2_NumberOfNodes> Children;
+    ArrayList<_7_PreOrder> Children;
 
-    _2_NumberOfNodes(int data) {
+    _7_PreOrder(int data) {
         this.data = data;
         Children = new ArrayList<>();
     }
 
     // ! Iteratively || LevelWise
-    public static _2_NumberOfNodes takeInputI() {
+    public static _7_PreOrder takeInputI() {
         Scanner s = new Scanner(System.in);
         System.out.println("Enter the node data");
         int rootData = s.nextInt();
-        _2_NumberOfNodes root = new _2_NumberOfNodes(rootData);
-        Queue<_2_NumberOfNodes> q = new LinkedList<_2_NumberOfNodes>();
+        _7_PreOrder root = new _7_PreOrder(rootData);
+        Queue<_7_PreOrder> q = new LinkedList<_7_PreOrder>();
         q.add(root);
         while (!q.isEmpty()) {
-            _2_NumberOfNodes frontNode = q.remove();
+            _7_PreOrder frontNode = q.remove();
             System.out.println("Enter the number of children of " + frontNode.data);
             int childCount = s.nextInt();
             for (int i = 0; i < childCount; i++) {
                 System.out.println("Enter the " + (i + 1) + "th children of " + frontNode.data);
                 int childData = s.nextInt();
-                _2_NumberOfNodes child = new _2_NumberOfNodes(childData);
+                _7_PreOrder child = new _7_PreOrder(childData);
                 frontNode.Children.add(child);
                 q.add(child);
             }
@@ -37,21 +37,21 @@ public class _2_NumberOfNodes {
         return root;
     }
 
-    public static int Nodes(_2_NumberOfNodes root) {
+    public static void PreOrder(_7_PreOrder root) {
         if (root == null) {
-            return 0;
+            System.out.println("-1");
+            return;
         }
-        int ans = 0;
+        System.out.print(root.data + ", ");
         for (int i = 0; i < root.Children.size(); i++) {
-            ans += Nodes(root.Children.get(i));
+            PreOrder(root.Children.get(i));
         }
-        return ans + 1;
     }
 
+    // 1 3 2 3 4 2 5 6 2 7 8 3 9 10 11 0 0 0 0 0 0 0
     public static void main(String[] args) {
         // ! Iteratively || levelwise
-        _2_NumberOfNodes root = takeInputI();
-        int nodes = Nodes(root);
-        System.out.println("Number of nodes in this tree are: " + nodes);
+        _7_PreOrder root = takeInputI();
+        PreOrder(root);
     }
 }

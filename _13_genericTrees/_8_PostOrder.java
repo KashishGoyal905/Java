@@ -1,4 +1,4 @@
-package _13_Trees;
+package _13_genericTrees;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
