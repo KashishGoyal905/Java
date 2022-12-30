@@ -15,7 +15,7 @@ public class _1_BST {
         right = null;
     }
 
-    // ! Recursively
+    //! Recursively
     public static _1_BST takeInputR() {
         Scanner s = new Scanner(System.in);
         System.out.println("Enter the root data:");
@@ -45,7 +45,7 @@ public class _1_BST {
         printR(root.right);
     }
 
-    // ! Level Wise
+    //! Level Wise
     public static _1_BST takeInputI() {
         Scanner s = new Scanner(System.in);
         System.out.println("Enter the root data:");
@@ -89,13 +89,13 @@ public class _1_BST {
         while (!q.isEmpty()) {
             _1_BST frontNode = q.remove();
             System.out.print(frontNode.data + ": ");
-            if (root.left != null) {
-                System.out.print(root.left.data + "(L), ");
-                q.add(root.left);
+            if (frontNode.left != null) {
+                System.out.print(frontNode.left.data + "(L), ");
+                q.add(frontNode.left);
             }
-            if (root.right != null) {
-                System.out.print(root.right.data + "(R)");
-                q.add(root.right);
+            if (frontNode.right != null) {
+                System.out.print(frontNode.right.data + "(R)");
+                q.add(frontNode.right);
             }
             System.out.println();
         }
@@ -107,7 +107,7 @@ public class _1_BST {
         // printR(root);
         // ! Level Wise
         _1_BST root = takeInputI();
-        printR(root);
+        printI(root);
     }
 
 }
