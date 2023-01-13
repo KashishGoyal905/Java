@@ -1,37 +1,37 @@
-package _15_BST;
+package _15_BT;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class _2_noOfNodes {
+public class _3_preOrder {
     int data;
-    _2_noOfNodes left;
-    _2_noOfNodes right;
+    _3_preOrder left;
+    _3_preOrder right;
 
-    public _2_noOfNodes(int data) {
+    public _3_preOrder(int data) {
         this.data = data;
         left = null;
         right = null;
     }
 
     // ! Level Wise
-    public static _2_noOfNodes takeInputI() {
+    public static _3_preOrder takeInputI() {
         Scanner s = new Scanner(System.in);
         System.out.println("Enter the root data:");
         int rootData = s.nextInt();
-        Queue<_2_noOfNodes> q = new LinkedList<_2_noOfNodes>();
+        Queue<_3_preOrder> q = new LinkedList<_3_preOrder>();
         if (rootData == -1) {
             return null;
         }
-        _2_noOfNodes root = new _2_noOfNodes(rootData);
+        _3_preOrder root = new _3_preOrder(rootData);
         q.add(root);
         while (!q.isEmpty()) {
-            _2_noOfNodes frontNode = q.remove();
+            _3_preOrder frontNode = q.remove();
             System.out.println("Enter the left child data of:" + frontNode.data);
             int leftChildData = s.nextInt();
             if (leftChildData != -1) {
-                _2_noOfNodes left = new _2_noOfNodes(leftChildData);
+                _3_preOrder left = new _3_preOrder(leftChildData);
                 frontNode.left = left;
                 q.add(left);
             } else {
@@ -40,7 +40,7 @@ public class _2_noOfNodes {
             System.out.println("Enter the right child data of:" + frontNode.data);
             int rightChildData = s.nextInt();
             if (rightChildData != -1) {
-                _2_noOfNodes right = new _2_noOfNodes(rightChildData);
+                _3_preOrder right = new _3_preOrder(rightChildData);
                 frontNode.right = right;
                 q.add(right);
             } else {
@@ -50,19 +50,20 @@ public class _2_noOfNodes {
         return root;
     }
 
-    public static int count(_2_noOfNodes root) {
-        if(root==null){
-            return 0;
+    public static void preOrder(_3_preOrder root) {
+        if (root == null) {
+            return;
         }
-        return count(root.right) + count(root.left) + 1;
+        System.out.print(root.data + ", ");
+        preOrder(root.left);
+        preOrder(root.right);
     }
-    
+
     // 1 2 3 4 5 6 7 -1 -1 -1 -1 -1 -1 -1 -1
     public static void main(String[] args) {
         // ! Level Wise
-        _2_noOfNodes root = takeInputI();
-        int noOfNodes = count(root);
-        System.out.println("Number of node in this binary tree are: " + noOfNodes);
+        _3_preOrder root = takeInputI();
+        preOrder(root);
     }
 
 }

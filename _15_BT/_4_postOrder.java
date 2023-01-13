@@ -1,37 +1,37 @@
-package _15_BST;
+package _15_BT;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class _3_preOrder {
+public class _4_postOrder {
     int data;
-    _3_preOrder left;
-    _3_preOrder right;
+    _4_postOrder left;
+    _4_postOrder right;
 
-    public _3_preOrder(int data) {
+    public _4_postOrder(int data) {
         this.data = data;
         left = null;
         right = null;
     }
 
     // ! Level Wise
-    public static _3_preOrder takeInputI() {
+    public static _4_postOrder takeInputI() {
         Scanner s = new Scanner(System.in);
         System.out.println("Enter the root data:");
         int rootData = s.nextInt();
-        Queue<_3_preOrder> q = new LinkedList<_3_preOrder>();
+        Queue<_4_postOrder> q = new LinkedList<_4_postOrder>();
         if (rootData == -1) {
             return null;
         }
-        _3_preOrder root = new _3_preOrder(rootData);
+        _4_postOrder root = new _4_postOrder(rootData);
         q.add(root);
         while (!q.isEmpty()) {
-            _3_preOrder frontNode = q.remove();
+            _4_postOrder frontNode = q.remove();
             System.out.println("Enter the left child data of:" + frontNode.data);
             int leftChildData = s.nextInt();
             if (leftChildData != -1) {
-                _3_preOrder left = new _3_preOrder(leftChildData);
+                _4_postOrder left = new _4_postOrder(leftChildData);
                 frontNode.left = left;
                 q.add(left);
             } else {
@@ -40,7 +40,7 @@ public class _3_preOrder {
             System.out.println("Enter the right child data of:" + frontNode.data);
             int rightChildData = s.nextInt();
             if (rightChildData != -1) {
-                _3_preOrder right = new _3_preOrder(rightChildData);
+                _4_postOrder right = new _4_postOrder(rightChildData);
                 frontNode.right = right;
                 q.add(right);
             } else {
@@ -50,20 +50,20 @@ public class _3_preOrder {
         return root;
     }
 
-    public static void preOrder(_3_preOrder root) {
+    public static void postOrder(_4_postOrder root) {
         if (root == null) {
             return;
         }
+        postOrder(root.left);
+        postOrder(root.right);
         System.out.print(root.data + ", ");
-        preOrder(root.left);
-        preOrder(root.right);
     }
 
     // 1 2 3 4 5 6 7 -1 -1 -1 -1 -1 -1 -1 -1
     public static void main(String[] args) {
         // ! Level Wise
-        _3_preOrder root = takeInputI();
-        preOrder(root);
+        _4_postOrder root = takeInputI();
+        postOrder(root);
     }
 
 }
