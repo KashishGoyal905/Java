@@ -15,32 +15,16 @@ public class _3_inRange {
         this.right = null;
     }
 
-    public static _3_inRange takeInputI() {
-        Scanner s = new Scanner(System.in);
-        System.out.println("Enter the root data: ");
-        int rootData = s.nextInt();
-        if (rootData == -1) {
-            return null;
+    public static _3_inRange insert(_3_inRange root,int data) {
+        if(root==null){
+            root = new _3_inRange(data);
+            return root;
         }
-        _3_inRange root = new _3_inRange(rootData);
-        Queue<_3_inRange> q = new LinkedList<_3_inRange>();
-        q.add(root);
-        while (!q.isEmpty()) {
-            _3_inRange frontNode = q.remove();
-            System.out.println("Enter the left child of: " + frontNode.data);
-            int leftChildData = s.nextInt();
-            if (leftChildData != -1) {
-                _3_inRange leftChild = new _3_inRange(leftChildData);
-                frontNode.left = leftChild;
-                q.add(leftChild);
-            }
-            System.out.println("Enter the right child of: " + frontNode.data);
-            int rightChildData = s.nextInt();
-            if (rightChildData != -1) {
-                _3_inRange rightChild = new _3_inRange(rightChildData);
-                frontNode.right = rightChild;
-                q.add(rightChild);
-            }
+
+        if(root.data>data){
+            root.left = insert(root.left,data);
+        }else{
+            root.right = insert(root.right,data);
         }
         return root;
     }
@@ -67,7 +51,11 @@ public class _3_inRange {
     }
 
     public static void main(String[] args) {
-        _3_inRange root = takeInputI();
+        int[] values = { 8,5,3,1,4,6,10,11,14};
+        _3_inRange root = null;
+        for (int i = 0; i < values.length; i++) {
+            root = insert(root,values[i]);
+        }
         Scanner s = new Scanner(System.in);
         System.out.println("enter the first value for range: ");
         int k1 = s.nextInt();

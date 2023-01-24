@@ -18,59 +18,36 @@ public class _1_BST {
         this.right = null;
     }
 
-    public static _1_BST takeInputI() {
-        Scanner s = new Scanner(System.in);
-        System.out.println("Enter the root data: ");
-        int rootData = s.nextInt();
-        if (rootData == -1) {
-            return null;
+    public static _1_BST insert(_1_BST root,int data) {
+        if(root==null){
+            root = new _1_BST(data);
+            return root;
         }
-        _1_BST root = new _1_BST(rootData);
-        Queue<_1_BST> q = new LinkedList<_1_BST>();
-        q.add(root);
-        while (!q.isEmpty()) {
-            _1_BST frontNode = q.remove();
-            System.out.println("Enter the left child of: " + frontNode.data);
-            int leftChildData = s.nextInt();
-            if (leftChildData != -1) {
-                _1_BST leftChild = new _1_BST(leftChildData);
-                frontNode.left = leftChild;
-                q.add(leftChild);
-            }
-            System.out.println("Enter the right child of: " + frontNode.data);
-            int rightChildData = s.nextInt();
-            if (rightChildData != -1) {
-                _1_BST rightChild = new _1_BST(rightChildData);
-                frontNode.right = rightChild;
-                q.add(rightChild);
-            }
+
+        if(root.data>data){
+            root.left = insert(root.left,data);
+        }else{
+            root.right = insert(root.right,data);
         }
         return root;
     }
 
-    public static void printI(_1_BST root) {
-        if (root == null) {
+    public static void inorder(_1_BST root){
+        if(root == null){
             return;
         }
-        Queue<_1_BST> q = new LinkedList<_1_BST>();
-        q.add(root);
-        while (!q.isEmpty()) {
-            _1_BST frontNode = q.remove();
-            System.out.print(frontNode.data + ": ");
-            if (frontNode.left != null) {
-                System.out.print(frontNode.left.data + "(L), ");
-                q.add(frontNode.left);
-            }
-            if (frontNode.right != null) {
-                System.out.print(frontNode.right.data + "(R)");
-                q.add(frontNode.right);
-            }
-            System.out.println();
-        }
+        inorder(root.left);
+        System.out.print(root.data + " ");
+        inorder(root.right);
     }
 
     public static void main(String[] args) {
-        _1_BST root = takeInputI();
-        printI(root);
+        int[] values = { 5, 1, 3, 4, 2, 7 };
+        _1_BST root = null;
+        for (int i = 0; i < values.length; i++) {
+            root = insert(root,values[i]);
+        }
+        inorder(root);
     }
 }
+  
