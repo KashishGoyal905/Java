@@ -12,7 +12,7 @@ public class _1_implement {
         if (heap.size() == 0) {
             return true;
         }
-        return false;
+        return false;   
     }
 
     // size
@@ -91,6 +91,6 @@ public class _1_implement {
     }
 
     public static void main(String[] args) {
-
+        
     }
 }
