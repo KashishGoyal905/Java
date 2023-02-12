@@ -41,6 +41,8 @@ public class _1_tries {
 
         return search(child, word.substring(1));
     }
+    //! delete:- we will traverse over the word and delete if and only if its eow is false and it has 0 children
+
 
     public static void main(String[] args) {
         _1_tries root = new _1_tries('\0');
