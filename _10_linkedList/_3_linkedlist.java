@@ -38,7 +38,7 @@ public class _3_linkedlist {
         int i = 0;
         _3_node<Integer> temp2 = head;
         _3_node<Integer> newNode = new _3_node<Integer>(data);
-        if(index==0){
+        if (index == 0) {
             newNode.next = temp2;
             return newNode;
         }
@@ -57,7 +57,7 @@ public class _3_linkedlist {
         int index = scanner.nextInt();
         int i = 0;
         _3_node<Integer> temp2 = head;
-        if(index==0){
+        if (index == 0) {
             head = head.next;
             return head;
         }
