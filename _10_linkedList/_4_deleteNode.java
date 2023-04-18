@@ -8,7 +8,7 @@ public class _4_deleteNode {
 
     _4_deleteNode(int data) {
         this.data = data;
-        next = null;
+        this.next = null;
     }
 
     public static void print(_4_deleteNode head) {
@@ -24,6 +24,7 @@ public class _4_deleteNode {
         int data = scanner.nextInt();
         _4_deleteNode head = null;
         _4_deleteNode tail = null;
+        
         while (data != -1) {
             _4_deleteNode newNode = new _4_deleteNode(data);
             length++;

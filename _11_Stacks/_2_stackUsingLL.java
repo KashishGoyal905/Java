@@ -36,6 +36,8 @@ public class _2_stackUsingLL {
         return data;
     }
 
+    // node->head
+    // node->head->node
     void push(int data) {
         _2_stackUsingLL node = new _2_stackUsingLL(data);
         if (head == null) {
