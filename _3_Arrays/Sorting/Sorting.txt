@@ -6,7 +6,20 @@ Insertion Sort -> in this sorting we make two parts one sorted one unsorted comp
                    of unsorted ot sorted and put it in the right direction.(its like a card 
                     we take one by one and put it in the right direction).
 
-Merge Sort -> in this sorting we compare first ele of each array and put the smallest one
-                 in the ans array and keep on doing that until either of i and j become
-                  greater and equal to their size then we bring two more loops to check
-                   if any array is not empty then print.
+Merge Sort -> in merge sort what we do is first we divide the array, until it becomes single single
+              length, that's why a base case, will find mid, and then divide the array from start to
+              mid and from mid+1 to end, now we have divide our array in single single length array, 
+              we now have to conquer it means sort it, (think divide like we have to make it of length 1)
+              (think conquer like you have an array of length 6 and left 3 are sorted in itself and right
+              3 are sorted in itself and now you have to conquer them) to sort both the arrays of length three 
+              we are going to maintain 2 pointers one for left array and one for right array,and one
+              pointer for our new array on which we are going to put over values in sorted order for 
+              now, after sorting we will update the original arr array using merged array.
+
+Quick Sort -> in quick sort, what we have to do is to find the correct index of our pivot element and then
+              we have to further apply our quick sort from low to pidx -1 and pidx+1 to low, and how do 
+              we find our pidx?: for this first of all we will assume our pivot ele to be the last ele
+              of the array, and we also need an index to swap the element which are greater then pivot,
+              then we will iterate over the array from low to high-1 as high is our pivot element , after
+              the loop we have all the small elements before the pivot now we have to put the pivot element at the
+              correct place then we swap one more time and return the index.

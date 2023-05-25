@@ -3,40 +3,28 @@ package _3_Arrays.Sorting;
 import java.util.Scanner;
 
 public class _1_selectionSort {
-    public static int[] takeInput() {
-        Scanner scanner = new Scanner(System.in);
-        int size = scanner.nextInt();
-        int array[] = new int[size];
-        for (int i = 0; i < size; i++) {
-            array[i] = scanner.nextInt();
-        }
-        return array;
-    }
-
-    public static void printArray(int[] array) {
-        int size = array.length;
-        for (int i = 0; i < size; i++) {
-            System.out.print(array[i] + " ");
-        }
-        System.out.println();
-    }
 
     public static void main(String[] args) {
-        int arr[] = takeInput();
-        int size = arr.length;
-        int count = -1;
-        for (int i = 0; i < size-1; i++) {
+        int arr[] = { 3, 5, 1, 8, 7, 9 };
+
+        // selection sort
+        for (int i = 0; i < arr.length - 1; i++) {
             int smallest = arr[i];
-            for (int j = i; j < size; j++) {
+            int idx = i;
+            for (int j = i + 1; j < arr.length; j++) {
                 if (arr[j] < smallest) {
                     smallest = arr[j];
-                    count = j;
+                    idx = j;
                 }
             }
-            int temp = arr[i]; 
+            int temp = arr[i];
             arr[i] = smallest;
-            arr[count] = temp;
+            arr[idx] = temp;
         }
-        printArray(arr);
+
+        // print
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
     }
 }

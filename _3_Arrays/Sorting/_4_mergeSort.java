@@ -1,56 +1,66 @@
 package _3_Arrays.Sorting;
 
-import java.util.Scanner;
-
 public class _4_mergeSort {
-    public static int[] takeInput() {
-        Scanner scanner = new Scanner(System.in);
-        int size = scanner.nextInt();
-        int array[] = new int[size];
-        for (int i = 0; i < size; i++) {
-            array[i] = scanner.nextInt();
+
+    public static void divide(int[] arr, int start, int end) {
+
+        if (start >= end) {
+            return;
         }
-        return array;
+
+        int mid = start + (end - start) / 2;
+        divide(arr, start, mid);
+        divide(arr, mid + 1, end);
+
+        conquer(arr, start, mid, end);
     }
 
-    public static void printArray(int[] array) {
-        int size = array.length;
-        for (int i = 0; i < size; i++) {
-            System.out.print(array[i] + " ");
+    public static void conquer(int[] arr, int start, int mid, int end) {
+
+        int[] merged = new int[end - start + 1];
+        int idx1 = start;
+        int idx2 = mid + 1;
+        int idx = 0;
+
+        while (idx1 <= mid && idx2 <= end) {
+            if (arr[idx1] <= arr[idx2]) {
+                merged[idx] = arr[idx1];
+                idx++;
+                idx1++;
+            } else {
+                merged[idx] = arr[idx2];
+                idx++;
+                idx2++;
+            }
         }
-        System.out.println();
+
+        while (idx1 <= mid) {
+            merged[idx] = arr[idx1];
+            idx++;
+            idx1++;
+        }
+
+        while (idx2 <= end) {
+            merged[idx] = arr[idx2];
+            idx++;
+            idx2++;
+        }
+
+        for (int i = 0, j = start; i < merged.length; i++, j++) {
+            arr[j] = merged[i];
+        }
     }
 
     public static void main(String[] args) {
-        int arr1[] = takeInput();
-        int size1 = arr1.length;
-        int arr2[] = takeInput();
-        int size2 = arr2.length;
-        int ans[] = new int[size1 + size2];
-        int i = 0;
-        int j = 0;
-        int third = 0;
-        while (i < size1 && j < size2) {
-            if (arr1[i] < arr2[j]) {
-                ans[third] = arr1[i];
-                third++;
-                i++;
-            } else {
-                ans[third] = arr2[j];
-                third++;
-                j++;
-            }
-        }   
-        while (i < size1) {
-            ans[third] = arr1[i];
-            i++;
-            third++;
+        int arr[] = { 3, 5, 1, 8, 7, 9 };
+
+        // merge sort
+        divide(arr, 0, arr.length - 1);
+
+        // print
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+
         }
-        while (j < size2) {
-            ans[third] = arr2[j];
-            j++;
-            third++;
-        }
-        printArray(ans);
     }
 }
